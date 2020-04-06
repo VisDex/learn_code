@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Data</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'accounts/style.css'%}" type="text/css">
+</head>
+<body>
+<div class="back">
+<h1 >You can login here</h1>
+<p style="font-weight: bold">Login here</p>
+<button class="btn btn-primary" type="button" name="button">Click me</button>
+    <h1>{{ myName }}</h1>
+    <ul>
+        {% for number in myNumbers %}
+        <li>{{ number }}</li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>
