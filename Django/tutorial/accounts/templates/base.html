@@ -26,13 +26,37 @@
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              {% if user.is_authenticated %}
             <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/account/">Home</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="/account/logout">LogOut</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="{% url 'view_profile' %}">Profile</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="/account/profile/edit">Edit Profile</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="/account/change-password">Change Password</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="/account/reset-password">Reset Password</a>
+                </li>
+            </ul>
+              {% else %}
+              <ul class="nav navbar-nav navbar-righ">
+                 <li class="nav-item">
+                    <a class="nav-link" href="/account/login/">Login</a>
+                </li>
               <li class="nav-item">
                 <a class="nav-link" href="/account/register/">Register</a>
               </li>
-
             </ul>
-
+            {% endif %}
           </div>
         </nav>
     </div>
