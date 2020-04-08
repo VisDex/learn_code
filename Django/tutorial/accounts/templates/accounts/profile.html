@@ -13,6 +13,11 @@
         <p>User first_name:{{ user.first_name }}</p>
         <p>User last_name:{{ user.last_name }}</p>
         <p>User email:{{ user.email }}</p>
+        <p>User Description:{{ user.userprofile.description }}</p>
+        <p>User City:{{ user.userprofile.city }}</p>
+        <p>User Website:{{ user.userprofile.website }}</p>
+        <p>User Phone:{{ user.userprofile.phone }}</p>
+        <img src="{{ user.userprofile.image.url }}" width="240">
 
 
     </div>

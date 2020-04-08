@@ -7,18 +7,6 @@ from django.contrib.auth.decorators import login_required
 from accounts.forms import RegistrationForm, EditProfileForm
 
 
-def home(request):
-    numbers = [1, 2, 3, 4, 5]
-    name = "Vishnu K"
-
-    args = {
-        "myName": name,
-        "myNumbers": numbers
-    }
-
-    return render(request, 'accounts/home.html', args)
-
-
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)

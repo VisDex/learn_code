@@ -25,37 +25,42 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="collapse navbar-collapse">
               {% if user.is_authenticated %}
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/account/">Home</a>
+                <li>
+                    <a class="nav-link" href="/home/">Home</a>
                 </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="/account/logout">LogOut</a>
+                 <li>
+                    <a class="nav-link" href="{% url 'accounts:view_profile' %}">Profile</a>
                 </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'view_profile' %}">Profile</a>
-                </li>
-                 <li class="nav-item">
+                 <li>
                     <a class="nav-link" href="/account/profile/edit">Edit Profile</a>
                 </li>
-                 <li class="nav-item">
+                 <li>
                     <a class="nav-link" href="/account/change-password">Change Password</a>
                 </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="/account/reset-password">Reset Password</a>
-                </li>
             </ul>
+              <ul class="nav navbar-nav navbar-right">
+                    <li>
+                    <a class="nav-link" href="/account/logout">LogOut</a>
+                </li>
+              </ul>
               {% else %}
-              <ul class="nav navbar-nav navbar-righ">
-                 <li class="nav-item">
-                    <a class="nav-link" href="/account/login/">Login</a>
+              <ul class="navbar-nav mr-auto">
+
+                  <li>
+                    <a class="nav-link" href="{% url 'accounts:reset_password' %}">Password Reset</a>
                 </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/account/register/">Register</a>
-              </li>
             </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                    <a class="nav-link" href="/account/login/">Login</a>
+                     </li>
+                    <li>
+                      <a class="nav-link" href="/account/register/">Register</a>
+                    </li>
+              </ul>
             {% endif %}
           </div>
         </nav>

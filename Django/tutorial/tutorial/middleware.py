@@ -17,7 +17,7 @@ def process_view(request, view_func, view_args, view_kwargs):
     #         return HttpResponseRedirect(settings.LOGIN_URL)
 
     url_is_exempt = [url for url in EXEMPT_URLS]
-    if path == reverse('logout'.lstrip('/')):
+    if path == reverse('accounts:logout'.lstrip('/')):
         logout(request)
     if request.user.is_authenticated and url_is_exempt:
         return redirect(settings.LOGIN_REDIRECT_URL)
